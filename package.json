@@ -1,0 +1,27 @@
+{
+  "name": "node-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start:local": "node ./dist/main.js",
+    "start:dev": "node ./dist/main.js",
+    "start:pro": "node ./dist/main.js",
+    "start:sit": "node ./dist/main.js",
+    "start:uat": "node ./dist/main.ts",
+    "dev": "ts-node ./src/main.ts",
+    "start": "node ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
