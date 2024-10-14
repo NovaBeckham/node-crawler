@@ -28,15 +28,29 @@ export const getData = async () => {
 
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  const elements = await page.$$('.arco-tag-content');
+  const cookie = await page.cookies('http://test2.taptapshop.com/supplyChain/goodsPickups')
 
-  console.log('elements', elements);
+  
+  const cookieArr = cookie.map((val) => {
+    return `${val.name}=${val.value}`
+  })
 
-  const items = await Promise.all(
-    elements.map(async (element) => {
-      return await element.getProperty('textContent');
-    }),
-  );
+  console.log('cookieArr', cookieArr.join(';'))
+
+  // const elements = await page.$$('.arco-table-body');
+
+  // const items = await Promise.all(
+  //   elements.map(async (element) => {
+  //     console.log('element', element.$$('.tbody > .arco-table-tr'))
+  //     return await element.getProperty('textContent');
+  //   }),
+  // );
+
+  // console.log('toString', items[0].toString())
+  // console.log('asElement', items[0].asElement())
+  // console.log('jsonValue', items[0].jsonValue())
+  // console.log('move', items[0].move())
+  // console.log('remoteObject', items[0].remoteObject())
 
   // 关闭浏览器
   await browser.close();
