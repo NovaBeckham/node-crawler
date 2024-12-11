@@ -1,6 +1,9 @@
-import { getData } from './puppeteer';
+// import { getGenres } from './puppeteer/genres';
+// import { getOnePageVideo } from './puppeteer/goto';
+// import { getData } from './puppeteer/video';
 
-getData();
-setInterval(() => {
-  getData();
-}, 1000 * 20);
+import { getGenres } from "./puppeteer/goto";
+
+// import { getOnePageVideo } from "./puppeteer/newFan";
+
+getGenres();
